@@ -1,6 +1,5 @@
 import QtQuick 2.6
 import QtQuick.Controls 2.0
-import io.qt.examples.backend 1.0
 
 ApplicationWindow {
     id: root
@@ -8,25 +7,24 @@ ApplicationWindow {
     height: 600
     visible: true
 
-        Canvas {
-            anchors.fill:parent
+    Canvas {
+        anchors.fill:parent
 
-            onPaint: {
-                var context = getContext("2d");
+        onPaint: {
+            var context = getContext("2d");
 
-                // the triangle
-                context.beginPath();
-                context.moveTo(60, 60);
-                context.lineTo(400, 400);
-                context.lineTo(60, 400);
-                context.closePath();
+            // the triangle
+            context.beginPath();
+            context.moveTo(60, 60);
+            context.lineTo(400, 400);
+            context.lineTo(60, 400);
+            context.closePath();
 
-                // the fill color
-                context.fillStyle = "#FFCC00";
-                context.fill();
-            }
+            // the fill color
+            context.fillStyle = "orange";
+            context.fill();
+        }
     }
-
 
     Rectangle  {
         color: "lightblue"
@@ -44,14 +42,14 @@ ApplicationWindow {
 
         SequentialAnimation on x {
             loops: Animation.Infinite
-            PropertyAnimation {to: 350; duration: 4000 }
-            PropertyAnimation {to: 100; duration: 4000 }
+            PropertyAnimation {to: 330; duration: 3000 }
+            PropertyAnimation {to: 20; duration: 3000 }
         }
 
         SequentialAnimation on y {
             loops: Animation.Infinite
-            PropertyAnimation {to: 350; duration: 4000 }
-            PropertyAnimation {to: 100; duration: 4000 }
+            PropertyAnimation {to: 330; duration: 3000 }
+            PropertyAnimation {to: 20; duration: 3000 }
 
         }
     }
